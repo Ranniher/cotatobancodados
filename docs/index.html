@@ -77,8 +77,9 @@
                                     '<td>' + contato.nome + '</td>' +
                                     '<td>' + contato.telefone + '</td>' +
                                     '<td>' + contato.email + '</td>' +
+                                    '<td>' + contato.obs + '</td>' +
                                     '<td>'+ contato.dtcontato + '</td>'+
-                                    '<td><i class="bi bi-pencil-fill" onclick="editarContato(' + contato.id + ',\'' + contato.nome + '\',\'' + contato.telefone + '\',\'' + contato.email + '\',\'' + contato.dtcontato + '\');"></i></td>' +
+                                    '<td><i class="bi bi-pencil-fill" onclick="editarContato(' + contato.id + ',\'' + contato.nome + '\',\'' + contato.telefone + '\',\'' + contato.email + '\',\'' + contato.obs + '\',\'' + contato.dtcontato + '\' );"></i> </td> ' +
                                     '<td><i class="bi bi-trash-fill" onclick="apagarContato(' + contato.id + ');"></i></td>' +
                                     '</tr>';
                         }
@@ -110,7 +111,7 @@
                 } // fim confirm
             };
 
-            let editarContato = (id, nome, telefone, email) => {
+           let editarContato = (id, nome, telefone, email, obs, dtcontato) => {
                 editando = true;
                 idContatoEditando = id;
                 $('#form-titulo').html('Editar Contato');
@@ -118,6 +119,7 @@
                 $('#input-nome').val(nome.toUpperCase());
                 $('#input-telefone').val(telefone);
                 $('#input-email').val(email);
+                $('#input-obs').val(obs);
                 $('#input-dtcontato').val(dtcontato);
             };
 
